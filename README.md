@@ -15,30 +15,22 @@ The pre-requisites are:-
 3.MySQL
 4.The database name is helpdesk.
 5.Create tables in database, namely users, queries and complaints. 
-users table
-+----------+--------------+------+-----+---------+----------------+
-| Field    | Type         | Null | Key | Default | Extra          |
-+----------+--------------+------+-----+---------+----------------+
-| id       | int          | NO   | PRI | NULL    | auto_increment |
-| username | varchar(255) | YES  |     | NULL    |                |
-| email    | varchar(255) | YES  |     | NULL    |                |
-| password | varchar(255) | YES  |     | NULL    |                |
-| phone    | varchar(255) | YES  |     | NULL    |                |
-+----------+--------------+------+-----+---------+----------------+
-queries table
-+--------+------+------+-----+---------+----------------
-| Field  | Type | Null | Key | Default | Extra          |
-+--------+------+------+-----+---------+----------------+
-| sl     | int  | NO   | PRI | NULL    | auto_increment |
-| userid | int  | YES  | MUL | NULL    |                |
-| query  | text | YES  |     | NULL    |                |
-+--------+------+------+-----+---------+----------------+
-complaints table
-+-----------+------+------+-----+---------+----------------+
-| Field     | Type | Null | Key | Default | Extra          |
-+-----------+------+------+-----+---------+----------------+
-| sl        | int  | NO   | PRI | NULL    | auto_increment |
-| userid    | int  | YES  | MUL | NULL    |                |
-| complaint | text | YES  |     | NULL    |                |
-+-----------+------+------+-----+---------+----------------+
+
+**users table:-
+ id(int,primary key,auto_increment)
+ username(varchar)
+ email(varchar)
+ password(varchar)
+ phone(varchar)
+
+**queries table
+ sl(int,primary key,auto_increment)
+ userid(int,foreign key,query) #userid should reference to id of users table
+ query(text)
+
+**complaints table
+ sl(int,primary key,auto_increment)
+ userid(int,foreign key,query) #userid should reference to id of users table
+ complaint(text)
+
 6.Run it on server.
